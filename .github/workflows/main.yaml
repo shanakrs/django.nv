@@ -54,3 +54,4 @@ jobs:
         run: |
           echo "Deployment is going on"
           sleep 30
+        continue-on-error: true
