@@ -107,4 +107,10 @@ jobs:
       id: njsscan
       uses: ajinabraham/njsscan-action@master
       with:
-        args: '.'
+        args: '. --sarif --output results.sarif || true'
+      continue-on-error: true
+    - name: Upload njsscan report
+      uses: actions/upload-artifact@v2
+      with:
+        sarif_file: results.sarif
+      continue-on-error: true
